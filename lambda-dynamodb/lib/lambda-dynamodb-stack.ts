@@ -40,5 +40,6 @@ export class LambdaDynamodbStack extends cdk.Stack {
     
     
     
+    
   }
 }

@@ -37,9 +37,8 @@ export class LambdaDynamodbStack extends cdk.Stack {
       }
     })
     
-    
-    
-    
+    const endpoint = api.root.addResource('scan');
+    const endpointMethod = endpoint.addMethod('GET', new apigateway.LambdaIntegration(lambda_backend))
     
   }
 }

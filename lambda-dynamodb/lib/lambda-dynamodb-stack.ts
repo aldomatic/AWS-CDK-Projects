@@ -12,13 +12,15 @@ export class LambdaDynamodbStack extends cdk.Stack {
 
     // define dynamodb table
     const dynamodb_table = new dynamodb.Table(this, 'Table', {
+      billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
       partitionKey:{
         name: 'id',
-        type: dynamodb.AttributeType.STRING
+        type: dynamodb.AttributeType.STRING,
       },
+      pointInTimeRecovery: true,
       removalPolicy: RemovalPolicy.DESTROY
     })
-    // define lambda function 
+    // define lambda function
     const lambda_backend = new NodejsFunction(this, "function", {
       tracing: lambda.Tracing.ACTIVE,
       environment: {
@@ -37,6 +39,7 @@ export class LambdaDynamodbStack extends cdk.Stack {
       }
     })
     
+    // define endpoint and associate it with a lambda backend
     const endpoint = api.root.addResource('scan');
     const endpointMethod = endpoint.addMethod('GET', new apigateway.LambdaIntegration(lambda_backend))
     

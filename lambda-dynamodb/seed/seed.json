@@ -1,0 +1,71 @@
+[{
+  "id": 1,
+  "first_name": "Justine",
+  "last_name": "Urian",
+  "email": "jurian0@jigsy.com",
+  "gender": "Polygender",
+  "ip_address": "120.11.30.121"
+}, {
+  "id": 2,
+  "first_name": "Auguste",
+  "last_name": "Tenney",
+  "email": "atenney1@amazon.de",
+  "gender": "Female",
+  "ip_address": "69.207.94.77"
+}, {
+  "id": 3,
+  "first_name": "Vikki",
+  "last_name": "Olsen",
+  "email": "volsen2@loc.gov",
+  "gender": "Female",
+  "ip_address": "143.141.14.208"
+}, {
+  "id": 4,
+  "first_name": "Dione",
+  "last_name": "Rawlyns",
+  "email": "drawlyns3@stanford.edu",
+  "gender": "Female",
+  "ip_address": "207.143.228.59"
+}, {
+  "id": 5,
+  "first_name": "Mauricio",
+  "last_name": "Kingswood",
+  "email": "mkingswood4@berkeley.edu",
+  "gender": "Male",
+  "ip_address": "117.249.208.206"
+}, {
+  "id": 6,
+  "first_name": "Fanchon",
+  "last_name": "Bordiss",
+  "email": "fbordiss5@china.com.cn",
+  "gender": "Female",
+  "ip_address": "78.42.225.165"
+}, {
+  "id": 7,
+  "first_name": "Kevin",
+  "last_name": "Kaes",
+  "email": "kkaes6@tamu.edu",
+  "gender": "Male",
+  "ip_address": "243.47.207.44"
+}, {
+  "id": 8,
+  "first_name": "Thayne",
+  "last_name": "Rickardes",
+  "email": "trickardes7@hibu.com",
+  "gender": "Male",
+  "ip_address": "148.228.239.194"
+}, {
+  "id": 9,
+  "first_name": "Donielle",
+  "last_name": "Quadrio",
+  "email": "dquadrio8@simplemachines.org",
+  "gender": "Female",
+  "ip_address": "90.66.17.199"
+}, {
+  "id": 10,
+  "first_name": "Nonnah",
+  "last_name": "Hofler",
+  "email": "nhofler9@goodreads.com",
+  "gender": "Female",
+  "ip_address": "240.126.225.157"
+}]

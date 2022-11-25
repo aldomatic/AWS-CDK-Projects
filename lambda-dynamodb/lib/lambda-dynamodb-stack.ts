@@ -1,10 +1,13 @@
 import * as cdk from 'aws-cdk-lib';
+import * as path from 'path';
 import { Construct } from 'constructs';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb'
 import { RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib';
 import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs'
 import * as lambda from 'aws-cdk-lib/aws-lambda'
 import * as apigateway from 'aws-cdk-lib/aws-apigateway'
+import { DynamoDBSeeder, Seeds } from '@cloudcomponents/cdk-dynamodb-seeder';
+
 
 export class LambdaDynamodbStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -15,11 +18,18 @@ export class LambdaDynamodbStack extends cdk.Stack {
       billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
       partitionKey:{
         name: 'id',
-        type: dynamodb.AttributeType.STRING,
+        type: dynamodb.AttributeType.NUMBER,
       },
       pointInTimeRecovery: true,
       removalPolicy: RemovalPolicy.DESTROY
     })
+    
+    // dynamodb seeder
+    new DynamoDBSeeder(this, 'JsonFileSeeder', {
+      table: dynamodb_table,
+      seeds: Seeds.fromJsonFile(path.join(__dirname, '../seed', 'seed.json')),
+    });
+    
     // define lambda function
     const lambda_backend = new NodejsFunction(this, "function", {
       tracing: lambda.Tracing.ACTIVE,

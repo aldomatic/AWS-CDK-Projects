@@ -1,6 +1,8 @@
-# Welcome to your CDK TypeScript project
+# Lambda + Dynamodb 
 
-This is a blank project for CDK development with TypeScript.
+
+This project will produce an endpoint that will scan a dynamdob table. The table will have initial data inserted when created. 
+
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
